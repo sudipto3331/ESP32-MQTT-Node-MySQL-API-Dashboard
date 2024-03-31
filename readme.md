@@ -44,7 +44,7 @@ The IoT Based Real Time Data Monitoring System is a comprehensive solution desig
 `https://www.arduino.cc/reference/en/libraries/wifi`
 3. [PubSubClient.h](https://github.com/knolleary/pubsubclient.git)
 `https://github.com/knolleary/pubsubclient.git`
-4. [Wire.h] (https://www.arduino.cc/reference/en/language/functions/communication/wire/)
+4. [Wire.h](https://www.arduino.cc/reference/en/language/functions/communication/wire)
 `https://www.arduino.cc/reference/en/language/functions/communication/wire`
 ### MQTT Explorer
 MQTT Explorer is utilized in this project to visualize the data from the MQTT Server.
