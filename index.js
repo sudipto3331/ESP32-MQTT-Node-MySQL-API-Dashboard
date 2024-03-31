@@ -1,6 +1,3 @@
-// Import MQTT service
-// import { MQTTService } from "./mqttService.js";
-
 // Target specific HTML items
 const sideMenu = document.querySelector("aside");
 const menuBtn = document.querySelector("#menu-btn");
