@@ -25,14 +25,14 @@
 
 ## 4. Introduction
 
-The IoT Based Real Time Data Monitoring System is a comprehensive solution designed to collect, process, and display data from sensors placed within a room. Real-time data along with daily, weekly, monthly summarized statistical data are also available for the user to view in the dashboard.
+The IoT Based Real-Time Data Monitoring System is a comprehensive solution designed to collect, process, and display data from sensors placed within a room. Real-time data along with daily, weekly, and monthly summarized statistical data are also available for the user to view in the dashboard.
 
 ## 5. Used Technology
 
 - ESP32 microcontroller for sensor data acquisition.
 - MQTT server for efficient communication between devices.
 - Node.js for creating a server to handle MQTT messages.
-- MySQL database to store real time and historical data
+- MySQL database to store real-time and historical data
 - PHP for building APIs to interact with the database.
 - HTML/CSS/JavaScript for developing the frontend interface.
 
@@ -150,7 +150,7 @@ Broker Server URL for this project:
 ```arduino
 const char* mqtt_server = "broker.emqx.io";
 ```
-You may use different open source mqtt-broker from [this](https://mntolia.com/10-free-public-private-mqtt-brokers-for-testing-prototyping/) list.
+You may use different open source mqtt-brokers from [this](https://mntolia.com/10-free-public-private-mqtt-brokers-for-testing-prototyping/) list.
 
 ### 7.3 MQTT Explorer
 You can connect to the MQTT Broker server from MQTT Explorer and visualize the data sent from ESP32 by subscribing to the particular topic that you provided earlier.
@@ -160,7 +160,7 @@ PICTURE
 
 A Node.js server is established to listen to incoming messages from the MQTT server. Upon receiving data, the server parses it and stores it in a database, facilitating efficient data management and retrieval for further processing. The instantaneous data are stored in a particular table from which the data is served to the dashboard via APIs. The current random data for four individual rooms are also stored in a separate data table with an interval of 15 seconds to visualize the data in a graphical format. The average hourly data, daily data, and weekly data are stored in separate data tables for historical analysis. 
 ```
-You need to run the mqtt-listener.js for start the datastream. 
+You need to run the mqtt-listener.js to start the datastream. 
 ```
 ```js
 node mqtt-listener.js
@@ -170,10 +170,10 @@ node mqtt-listener.js
 
 The MySQL database is utilized for data storage in this application. There are several data tables designed to store data received from the MQTT server. Two tables are designated as instantaneous data update tables where incoming data is frequently updated from the MQTT server. Minimum, maximum, and average data are stored for every hour in a separate table. Additionally, based on the time interval, the daily average data is also stored in another table for historical analysis.
 
-The database tables are provided as follow:
+The database tables are provided as follows:
 TABLE PICTURE
 
-### 7.6 API Creation : PHP
+### 7.6 API Creation: PHP
 
 PHP is used to develop APIs that interface with the database. These APIs serve as endpoints for the frontend to access and retrieve data stored in the database, enabling seamless integration between the frontend and backend components. Below are the APIs and the sample output data format.
 
