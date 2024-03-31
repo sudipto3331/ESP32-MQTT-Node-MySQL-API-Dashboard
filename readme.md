@@ -1,11 +1,10 @@
 
-# IoT Based Real Time Data Monitoring System
+# IoT Based Real-Time Data Monitoring System
 ## ESP32 -> MQTT Server -> Node.js Server -> MySQL -> API -> Dashboard
-<img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UC_vVD-q2FbMi1VS0z7-PQOw">
 <img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UC_vVD-q2FbMi1VS0z7-PQOw">
 
 ## 1. Overall System Diagram
-<img width="468" alt="image" src="https://github.com/sudipto3331/SATL-2/assets/37965793/2837d970-ee90-4328-bee8-4e0e754cc961">
+<img width="468" alt="image" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/e13c5a5e-9a11-4f98-84ab-69860880086a">
 
 ## 2. Dashboard Visualization 
 <img width="468" alt="image" src="https://github.com/sudipto3331/SATL-2/assets/37965793/2837d970-ee90-4328-bee8-4e0e754cc961">
