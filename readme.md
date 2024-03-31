@@ -4,7 +4,7 @@
 <img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UC_vVD-q2FbMi1VS0z7-PQOw">
 
 ## 1. Overall System Diagram
-<img width="468" alt="image" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/e13c5a5e-9a11-4f98-84ab-69860880086a">
+<img width="800" alt="image" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/e13c5a5e-9a11-4f98-84ab-69860880086a">
 
 ## 2. Dashboard Visualization 
 <img width="863" alt="Screenshot 2024-04-01 at 12 04 17 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/44608948-4f43-4834-913f-0012503951e1">
