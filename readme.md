@@ -154,7 +154,9 @@ You may use different open source mqtt-brokers from [this](https://mntolia.com/1
 
 ### 7.3 MQTT Explorer
 You can connect to the MQTT Broker server from MQTT Explorer and visualize the data sent from ESP32 by subscribing to the particular topic that you provided earlier.
-<img width="400" alt="Screenshot 2024-04-01 at 12 50 54 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/bed9a465-99b8-410f-b418-6f856c0e7381"><img width="400" alt="Screenshot 2024-04-01 at 12 51 19 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/8f12647e-d684-4cdc-a872-ba4ad3fb85f0">
+
+<img width="400" alt="Screenshot 2024-04-01 at 12 50 54 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/bed9a465-99b8-410f-b418-6f856c0e7381">
+<img width="400" alt="Screenshot 2024-04-01 at 12 51 19 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/8f12647e-d684-4cdc-a872-ba4ad3fb85f0">
 
 
 ### 7.4 Server-Side Development
@@ -172,6 +174,7 @@ node mqtt-listener.js
 The MySQL database is utilized for data storage in this application. There are several data tables designed to store data received from the MQTT server. Two tables are designated as instantaneous data update tables where incoming data is frequently updated from the MQTT server. Minimum, maximum, and average data are stored for every hour in a separate table. Additionally, based on the time interval, the daily average data is also stored in another table for historical analysis.
 
 The database tables are provided as follows:
+
 <img width="400" alt="Screenshot 2024-04-01 at 12 52 37 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/bc3c1024-1b74-46a4-9e04-74c8032a030b">
 <img width="400" alt="Screenshot 2024-04-01 at 12 53 26 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/20c5a715-631f-4c61-83e5-ef9734b48689">
 <img width="400" alt="Screenshot 2024-04-01 at 12 53 51 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/cc5548fe-d9cc-40f3-b3b4-edb5c2b9bf29">
