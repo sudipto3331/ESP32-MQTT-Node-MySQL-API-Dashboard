@@ -181,7 +181,6 @@ The database tables are provided as follows:
 <img width="400" alt="Screenshot 2024-04-01 at 12 54 12 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/ca217b8a-aae5-491d-964d-c03de4cc1716">
 <img width="400" alt="Screenshot 2024-04-01 at 12 54 33 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/c9afb223-5ad8-468b-9cef-fcacfe9e83e7">
 <img width="400" alt="Screenshot 2024-04-01 at 12 54 54 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/9c7a2088-0cfc-4954-8d45-2dd1ecd372c2">
-<img width="400" alt="Screenshot 2024-04-01 at 12 55 13 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/f005637c-ec59-4501-a954-bb9aaa02cb74">
 
 
 ### 7.6 API Creation: PHP
