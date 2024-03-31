@@ -7,7 +7,12 @@
 <img width="468" alt="image" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/e13c5a5e-9a11-4f98-84ab-69860880086a">
 
 ## 2. Dashboard Visualization 
-<img width="468" alt="image" src="https://github.com/sudipto3331/SATL-2/assets/37965793/2837d970-ee90-4328-bee8-4e0e754cc961">
+<img width="863" alt="Screenshot 2024-04-01 at 12 04 17 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/44608948-4f43-4834-913f-0012503951e1">
+<img width="863" alt="Screenshot 2024-04-01 at 12 04 53 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/0881ca10-54d9-491b-80e2-0817732968f2">
+<img width="769" alt="Screenshot 2024-04-01 at 12 05 24 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/28ca43ea-2893-4c2a-a74a-b7416f0d1f76">
+<img width="767" alt="Screenshot 2024-04-01 at 12 05 45 AM" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/19f04770-5c73-4aeb-affd-316cc5fc8c35">
+<img width="468" alt="image" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/81d8338e-7f55-4934-a8bd-f5699f8fde7e">
+
 
 ## 3. Instruction
 1. Go to the installation section and install all required libraries.
