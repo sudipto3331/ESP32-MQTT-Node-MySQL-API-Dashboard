@@ -1,0 +1,151 @@
+#include <ArduinoJson.h>
+#include <ArduinoJson.hpp>
+#include <WiFi.h>
+#include <PubSubClient.h>
+#include <Wire.h>
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+
+const char* ssid = "****"; //Change according to your credentials
+const char* password = "****";
+const char* mqtt_server = "broker.emqx.io"; //You may use any broker server you want
+const char* publishTopic1 = "/SATL/room1";
+const char* publishTopic2 = "/SATL/room2";
+const char* publishTopic3 = "/SATL/room3";
+const char* publishTopic4 = "/SATL/room4";
+const char* subscriptionTopic = "/sudipto/readback";
+
+int sensorReadDelay1 = 1000; //Datarate 1s
+int sensorReadDelay2 = 3000; //Datarate 3s
+
+long lastMsg1 = 0;
+long lastMsg2 = 0;
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Message arrived [");
+  Serial.print(topic);
+  Serial.print("] ");
+  
+  for (int i = 0; i < length; i++) {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
+}
+
+void setup() {
+  delay(100);
+  Serial.begin(115200);
+  while (!Serial);
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi Connected");
+  Serial.println("IP Address: ");
+  Serial.println(WiFi.localIP());
+
+  client.setServer(mqtt_server, 1883);
+  client.setCallback(callback);
+}
+
+void loop() {
+
+  if (!client.connected()) {
+    reconnect();
+  }
+
+  StaticJsonDocument<80> doc1,doc2,doc3,doc4;
+  char output1[80], output2[80], output3[80], output4[80];
+
+  long now = millis();
+  
+  if (now - lastMsg1 > sensorReadDelay1) {
+    lastMsg1 = now;
+    int temperature1 = random(25, 50);
+    int humidity1 = random(75, 100);
+    int gas1 = random(40, 80);
+    int oxygen1 = random(85, 100);
+
+    int temperature2 = random(25, 50);
+    int humidity2 = random(75, 100);
+    int gas2 = random(40, 80);
+    int oxygen2 = random(85, 100);
+    
+    doc1["temperature"] = temperature1;
+    doc1["humidity"] = humidity1;
+    doc1["gas"] = gas1;
+    doc1["oxygen"] = oxygen1;
+
+    serializeJson(doc1, output1);
+    Serial.println(output1);
+    client.publish(publishTopic1, output1);
+
+    doc2["temperature"] = temperature2;
+    doc2["humidity"] = humidity2;
+    doc2["gas"] = gas2;
+    doc2["oxygen"] = oxygen2;
+
+    serializeJson(doc2, output2);
+    Serial.println(output2);
+    client.publish(publishTopic2, output2);
+  }
+
+
+  if (now - lastMsg2 > sensorReadDelay2) {
+    lastMsg2 = now;
+    int temperature1 = random(25, 50);
+    int humidity1 = random(75, 100);
+    int gas1 = random(40, 80);
+    int oxygen1 = random(85, 100);
+
+    int temperature2 = random(25, 50);
+    int humidity2 = random(75, 100);
+    int gas2 = random(40, 80);
+    int oxygen2 = random(85, 100);
+    
+    doc1["temperature"] = temperature1;
+    doc1["humidity"] = humidity1;
+    doc1["gas"] = gas1;
+    doc1["oxygen"] = oxygen1;
+
+    serializeJson(doc1, output1);
+    Serial.println(output1);
+    client.publish(publishTopic3, output1);
+
+    doc2["temperature"] = temperature2;
+    doc2["humidity"] = humidity2;
+    doc2["gas"] = gas2;
+    doc2["oxygen"] = oxygen2;
+
+    serializeJson(doc2, output2);
+    Serial.println(output2);
+    client.publish(publishTopic4, output2);
+  }
+
+}
+
+void reconnect() {
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    String clientId = "ESP8266Client-";
+    clientId += String(random(0xffff), HEX);
+    if (client.connect(clientId.c_str())) {
+      Serial.println("Connected");
+      client.subscribe(subscriptionTopic);
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      delay(2000);
+    }
+  }
+}
