@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly Report</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Sharp" rel="stylesheet" />
+  <link rel="stylesheet" href="./weeklystyle.css" />
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 40px;
+      /* Adjust the left margin */
+      margin-right: 40px;
+      /* Adjust the right margin */
+    }
+
+    .box {
+      width: 30%;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>
+      <center>Weekly Report</center>
+    </h1>
+    <div class="container" id="weekly-container">
+      <!-- Boxes will be dynamically generated here -->
+    </div>
+  </main>
+
+  <script>
+    window.onload = function () {
+      const startDate = new Date('2024-03-22');
+      const endDate = new Date('2024-03-28');
+      const container = document.getElementById('weekly-container');
+
+      const dates = getDates(startDate, endDate);
+      dates.forEach(date => {
+        const box = document.createElement('div');
+        box.classList.add('box');
+        const formattedDate = formatDate(date);
+        const index = dates.indexOf(date) + 1;
+        box.innerHTML = `
+          <h2>
+            <center>${formattedDate}</center>
+          </h2>
+          <div class="insights">
+            <div class="temperature">
+              <div class="middle">
+                <div class="left">
+                  <h3>Temperature</h3>
+                  <div>
+                    <span id="max-temp${index}">Max: </span>
+                    <span id="min-temp${index}">Min: </span>
+                    <span id="avg-temp${index}">Avg: </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="humidity">
+              <div class="middle">
+                <div class="left">
+                  <h3>Humidity</h3>
+                  <div>
+                    <span id="max-hum${index}">Max: </span>
+                    <span id="min-hum${index}">Min: </span>
+                    <span id="avg-hum${index}">Avg: </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pressure">
+              <div class="middle">
+                <div class="left">
+                  <h3>Gas level</h3>
+                  <div>
+                    <span id="max-gas${index}">Max: </span>
+                    <span id="min-gas${index}">Min: </span>
+                    <span id="avg-gas${index}">Avg: </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="altitude">
+              <div class="middle">
+                <div class="left">
+                  <h3>O<sub>2</sub> level</h3>
+                  <div>
+                    <span id="max-oxygen${index}">Max: </span>
+                    <span id="min-oxygen${index}">Min: </span>
+                    <span id="avg-oxygen${index}">Avg: </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(box);
+
+        fetch(`https://trackingdevice.info/SATL/daily-data.php?room_no=room1&timestamp=${date.toISOString().slice(0, 10)}`)
+          .then(response => response.json())
+          .then(data => {
+            const roomData = data[0];
+            document.getElementById(`max-temp${index}`).innerHTML = `Max: <strong>${roomData.avg_t_max}</strong>`;
+            document.getElementById(`min-temp${index}`).innerHTML = `Min: <strong>${roomData.avg_t_min}</strong>`;
+            document.getElementById(`avg-temp${index}`).innerHTML = `Avg: <strong>${(parseFloat(roomData.avg_t_min) + parseFloat(roomData.avg_t_max)) / 2}</strong>`;
+            document.getElementById(`max-hum${index}`).innerHTML = `Max: <strong>${roomData.avg_h_max}</strong>`;
+            document.getElementById(`min-hum${index}`).innerHTML = `Min: <strong>${roomData.avg_h_min}</strong>`;
+            document.getElementById(`avg-hum${index}`).innerHTML = `Avg: <strong>${(parseFloat(roomData.avg_h_min) + parseFloat(roomData.avg_h_max)) / 2}</strong>`;
+            document.getElementById(`max-gas${index}`).innerHTML = `Max: <strong>${roomData.avg_g_max}</strong>`;
+            document.getElementById(`min-gas${index}`).innerHTML = `Min: <strong>${roomData.avg_g_min}</strong>`;
+            document.getElementById(`avg-gas${index}`).innerHTML = `Avg: <strong>${(parseFloat(roomData.avg_g_min) + parseFloat(roomData.avg_g_max)) / 2}</strong>`;
+            document.getElementById(`max-oxygen${index}`).innerHTML = `Max: <strong>${roomData.avg_o_max}</strong>`;
+            document.getElementById(`min-oxygen${index}`).innerHTML = `Min: <strong>${roomData.avg_o_min}</strong>`;
+            document.getElementById(`avg-oxygen${index}`).innerHTML = `Avg: <strong>${(parseFloat(roomData.avg_o_min) + parseFloat(roomData.avg_o_max)) / 2}</strong>`;
+          })
+          .catch(error => console.error('Error fetching data:', error));
+
+
+      });
+    };
+
+    function getDates(startDate, endDate) {
+      const dates = [];
+      let currentDate = startDate;
+      while (currentDate <= endDate) {
+        dates.push(currentDate);
+        currentDate = new Date(currentDate);
+        currentDate.setDate(currentDate.getDate() + 1);
+      }
+      return dates;
+    }
+
+    function formatDate(date) {
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      return date.toLocaleDateString('en-US', options);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1</title>
+    <link rel="stylesheet" href="dailystyle.css">
+</head>
+<body>
+    <table class="content-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Gas Level</th>
+            <th>Oxygen Level</th>
+          </tr>
+        </thead>
+        <tbody id="data-body">
+          <!-- Data will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        fetch('https://trackingdevice.info/SATL/hour-data.php?room_no=room1&timestamp=2024-03-28')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.getElementById('data-body');
+
+                data.forEach(entry => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${entry.last_updated}</td>
+                        <td>${entry.t_max}</td>
+                        <td>${entry.h_max}</td>
+                        <td>${entry.g_max}</td>
+                        <td>${entry.o_max}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Data</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Sharp" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 40px; 
+      margin-right: 40px; 
+    }
+
+    .box {
+      width: 48%;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>
+      <center>MQTT Dashboard</center>
+    </h1>
+    <div class="connection-status">
+      <h3>
+        <center>Connection Status: <span class="status">Disconnected</span></center>
+      </h3>
+    </div>
+    <div class="container">
+      <div class="box" id="room-room1">
+        <h2>
+          <center>Room 1</center>
+        </h2>
+        <div class="insights">
+          <div class="temperature">
+            <div class="middle">
+              <div class="left">
+                <h3>Temperature</h3>
+                <h1 id="temperature-room1">NULL<sup>o</sup></h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> device_thermostat </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="humidity">
+            <div class="middle">
+              <div class="left">
+                <h3>Humidity</h3>
+                <h1 id="humidity-room1">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp">
+                  humidity_percentage
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pressure">
+            <div class="middle">
+              <div class="left">
+                <h3>Gas level</h3>
+                <h1 id="gas-room1">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> gas_meter </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="altitude">
+            <div class="middle">
+              <div class="left">
+                <h3>O<sub>2</sub> level</h3>
+                <h1 id="oxygen-room1">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> oxygen_saturation </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box" id="room-room2">
+        <h2>
+          <center>Room 2</center>
+        </h2>
+        <div class="insights">
+          <div class="temperature">
+            <div class="middle">
+              <div class="left">
+                <h3>Temperature</h3>
+                <h1 id="temperature-room2">NULL<sup>o</sup></h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> device_thermostat </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="humidity">
+            <div class="middle">
+              <div class="left">
+                <h3>Humidity</h3>
+                <h1 id="humidity-room2">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp">
+                  humidity_percentage
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pressure">
+            <div class="middle">
+              <div class="left">
+                <h3>Gas level</h3>
+                <h1 id="gas-room2">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> gas_meter </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="altitude">
+            <div class="middle">
+              <div class="left">
+                <h3>O<sub>2</sub> level</h3>
+                <h1 id="oxygen-room2">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> oxygen_saturation </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="box" id="room-room3">
+        <h2>
+          <center>Room 3</center>
+        </h2>
+        <div class="insights">
+          <div class="temperature">
+            <div class="middle">
+              <div class="left">
+                <h3>Temperature</h3>
+                <h1 id="temperature-room3">NULL<sup>o</sup></h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> device_thermostat </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="humidity">
+            <div class="middle">
+              <div class="left">
+                <h3>Humidity</h3>
+                <h1 id="humidity-room3">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp">
+                  humidity_percentage
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pressure">
+            <div class="middle">
+              <div class="left">
+                <h3>Gas level</h3>
+                <h1 id="gas-room3">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> gas_meter </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="altitude">
+            <div class="middle">
+              <div class="left">
+                <h3>O<sub>2</sub> level</h3>
+                <h1 id="oxygen-room3">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> oxygen_saturation </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box" id="room-room4">
+        <h2>
+          <center>Room 4</center>
+        </h2>
+        <div class="insights">
+          <div class="temperature">
+            <div class="middle">
+              <div class="left">
+                <h3>Temperature</h3>
+                <h1 id="temperature-room4">NULL<sup>o</sup></h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> device_thermostat </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="humidity">
+            <div class="middle">
+              <div class="left">
+                <h3>Humidity</h3>
+                <h1 id="humidity-room4">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp">
+                  humidity_percentage
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pressure">
+            <div class="middle">
+              <div class="left">
+                <h3>Gas level</h3>
+                <h1 id="gas-room4">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> gas_meter </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="altitude">
+            <div class="middle">
+              <div class="left">
+                <h3>O<sub>2</sub> level</h3>
+                <h1 id="oxygen-room4">NULL</h1>
+              </div>
+              <div class="icon">
+                <span class="material-symbols-sharp"> oxygen_saturation </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Function to fetch data from the API and update the HTML content
+    function fetchDataAndUpdate(roomName) {
+      fetch(`https://trackingdevice.info/SATL/live-data.php?room=${roomName}`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById(`temperature-${roomName}`).textContent = data.temperature + '°';
+          document.getElementById(`humidity-${roomName}`).textContent = data.humidity;
+          document.getElementById(`gas-${roomName}`).textContent = data.gas;
+          document.getElementById(`oxygen-${roomName}`).textContent = data.oxygen;
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
+    // Function to update data for all rooms
+    function updateRoomsData() {
+      const rooms = ['room1', 'room2', 'room3', 'room4'];
+      rooms.forEach(room => fetchDataAndUpdate(room));
+    }
+
+    // Update rooms data every 100 ms
+    setInterval(updateRoomsData, 100);
+
+    // Initial update when the page loads
+    updateRoomsData();
+  </script>
+</body>
+
+</html>
