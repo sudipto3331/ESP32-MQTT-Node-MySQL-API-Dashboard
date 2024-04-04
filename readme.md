@@ -2,6 +2,7 @@
 ## ESP32 -> MQTT Server -> Node.js Server -> MySQL -> API -> Dashboard
 <img alt="Project Title" src="https://img.shields.io/badge/Core-ESP32-red"> <img alt="Project Title" src="https://img.shields.io/badge/Core-MQTT-blue"> <img alt="Project Title" src="https://img.shields.io/badge/Core-Node.js-green"> <img alt="Project Title" src="https://img.shields.io/badge/Core-MySQL-yellow"> <img alt="Project Title" src="https://img.shields.io/badge/Core-Dashboard-pink">
 
+
 ## 1. Overall System Diagram
 <img width="700" align="center" alt="image" src="https://github.com/sudipto3331/ESP32-MQTT-Node-MySQL-API-Dashboard/assets/37965793/50d7bb89-8746-4dbe-abf1-e5e32c537838">
 
